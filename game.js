@@ -13,13 +13,22 @@ document.addEventListener("DOMContentLoaded", function(event){
         for (var i = 0; i < boundaries.length; i++) {
             boundaries[i].classList.remove("youlose");
         }
+        score=0;
         status.textContent = "Begin by moving your mouse over the 'S'.";
     }
     function wonGame(){
-        if (!start.classList.contains("youlose")){
+        if (score==0 &&!start.classList.contains("youlose")){
             status.textContent="You Won! Click 'S' to play again.";
             score+=5;
-            console.log(score);
+        }
+    }
+    function lostGame(){
+        if(score==0){
+        for (var i = 0; i < boundaries.length; i++) {
+            boundaries[i].classList.add("youlose");
+        }
+        status.textContent = "You lost! Click the 'S' to play again.";
+        score-=10;
         }
     }
 
