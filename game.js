@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", function(event){
             boundaries[i].classList.remove("youlose");
         }
         status.textContent = "Begin by moving your mouse over the 'S'.";
-        score = 0;
     }
-    function wonGame() {
-        if (score == 0 && !start.classList.contains("youlose")) {
-            status.textContent = "You win! Click the 'S' to play again.";
-            score += 5;
+    function wonGame(){
+        if (!start.classList.contains("youlose")){
+            status.textContent="You Won! Click 'S' to play again.";
+            score+=5;
+            console.log(score);
         }
     }
 
